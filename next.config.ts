@@ -12,11 +12,16 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
   
-  // Enable static export for better Vercel deployment
-  output: 'standalone',
+  // Remove standalone for Vercel deployment issue
+  // output: 'standalone',
   
   // Compression and performance
   compress: true,
+  
+  // Add generateBuildId for forcing new deployments
+  generateBuildId: async () => {
+    return `build-${Date.now()}`;
+  },
   
   // Headers for security and performance
   async headers() {
@@ -39,6 +44,10 @@ const nextConfig: NextConfig = {
           {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate, proxy-revalidate, max-age=0',
           },
         ],
       },
