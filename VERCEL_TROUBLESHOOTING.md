@@ -95,12 +95,7 @@ html {
 ```
 
 #### مشکل D: خطای SSL یا HTTPS
-اگر پس از اتصال دامنه در هنگام دسترسی به سایت با HTTPS با خطا مواجه می‌شوید:
-1. در **Vercel Dashboard** به تب "Domains" بروید و وضعیت دامنه را بررسی کنید. دامنه باید با برچسب **Valid** و گواهی SSL صادرشده نمایش داده شود.
-2. رکوردهای DNS (A یا CNAME) را با ابزارهایی مانند `dig yourdomain.com` یا `nslookup` بررسی کنید تا مطمئن شوید به آدرس‌های Vercel اشاره می‌کنند.
-3. می‌توانید با دستور `openssl s_client -connect yourdomain.com:443` زنجیره گواهی را بررسی کنید و از تطابق نام دامنه مطمئن شوید.
-4. در صورت مشاهده پیام‌های **untrusted** یا **certificate mismatch** صبر کنید تا DNS به‌روزرسانی شود یا دامنه را مجدداً در Vercel اضافه کنید.
-5. گاهی پاک کردن کش مرورگر یا تست در مرورگر دیگر مشکل را برطرف می‌کند.
+
 
 ---
 
@@ -202,4 +197,3 @@ Settings → Framework Preset → Next.js
 - GitHub: [Issues](https://github.com/faroadmap/faroadmap/issues)
 
 ---
-**تاریخ آپدیت:** 2025-08-01
