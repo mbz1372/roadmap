@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Heart, Users, Target, Lightbulb } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata = {
   title: "درباره فارودمپ | نقشه راه توسعه‌دهندگان ایرانی",
@@ -30,14 +30,6 @@ export default function AboutPage() {
       icon: <Heart className="h-8 w-8 text-primary" />,
       title: "رایگان",
       description: "همیشه رایگان و در دسترس همه علاقه‌مندان به برنامه‌نویسی"
-    }
-  ];
-
-  const team = [
-    {
-      name: "تیم توسعه فارودمپ",
-      role: "توسعه‌دهندگان جامعه ایران",
-      description: "گروهی از توسعه‌دهندگان علاقه‌مند که برای پیشرفت جامعه تلاش می‌کنند"
     }
   ];
 

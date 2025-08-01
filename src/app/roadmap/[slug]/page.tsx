@@ -7,16 +7,16 @@ import { ArrowRight, Clock, Calendar, BarChart3, Share2 } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { RoadmapTree } from "@/components/roadmap-tree";
 import { getRoadmapBySlug } from "@/data/roadmaps";
 import { Roadmap, RoadmapItem } from "@/types/roadmap";
 import { formatDate, cn } from "@/lib/utils";
 
 interface RoadmapPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 function getDifficultyColor(difficulty: string) {
@@ -66,16 +66,20 @@ function calculateProgress(items: RoadmapItem[]): { completed: number; total: nu
 }
 
 export default function RoadmapPage({ params }: RoadmapPageProps) {
-  const roadmap = getRoadmapBySlug(params.slug);
-  const [roadmapData, setRoadmapData] = useState<Roadmap | null>(roadmap || null);
-
-  if (!roadmap) {
-    notFound();
-  }
+  const [roadmapData, setRoadmapData] = useState<Roadmap | null>(null);
 
   useEffect(() => {
-    setRoadmapData(roadmap);
-  }, [roadmap]);
+    const getSlug = async () => {
+      const resolvedParams = await params;
+      const roadmap = getRoadmapBySlug(resolvedParams.slug);
+      if (!roadmap) {
+        notFound();
+      }
+      setRoadmapData(roadmap);
+    };
+    
+    getSlug();
+  }, [params]);
 
   const handleStatusChange = (itemId: string, status: RoadmapItem['status']) => {
     if (!roadmapData) return;
@@ -98,10 +102,23 @@ export default function RoadmapPage({ params }: RoadmapPageProps) {
     });
   };
 
-  const progress = roadmapData ? calculateProgress(roadmapData.items) : { completed: 0, total: 0 };
-  const progressPercentage = progress.total > 0 ? Math.round((progress.completed / progress.total) * 100) : 0;
+  if (!roadmapData) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1 flex items-center justify-center">
+          <div className="text-center">
+            <div className="text-6xl mb-4">🗺️</div>
+            <h1 className="text-2xl font-bold mb-4">در حال بارگذاری...</h1>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
-  if (!roadmapData) return null;
+  const progress = calculateProgress(roadmapData.items);
+  const progressPercentage = progress.total > 0 ? Math.round((progress.completed / progress.total) * 100) : 0;
 
   return (
     <div className="min-h-screen flex flex-col">

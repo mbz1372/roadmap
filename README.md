@@ -1,140 +1,36 @@
-# فارودمپ | FaRoadmap
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-نقشه راه کامل توسعه‌دهندگان ایرانی - A comprehensive roadmap platform for Iranian developers
+## Getting Started
 
-## 📖 درباره پروژه | About
-
-فارودمپ یک پلتفرم آموزشی رایگان و متن‌باز است که نقشه‌راه‌های کاملی برای یادگیری مختلف حوزه‌های توسعه نرم‌افزار ارائه می‌دهد. این پروژه ویژه برای جامعه توسعه‌دهندگان ایرانی طراحی شده و تمامی محتوا به زبان فارسی و با رابط کاربری راست به چپ (RTL) ارائه می‌شود.
-
-FaRoadmap is a free and open-source educational platform that provides comprehensive roadmaps for learning various software development fields. This project is specifically designed for the Iranian developer community and offers all content in Persian with right-to-left (RTL) user interface.
-
-## ✨ ویژگی‌ها | Features
-
-- 🗺️ **نقشه‌راه‌های کامل**: مسیرهای یادگیری ساختاریافته از مبتدی تا پیشرفته
-- 🌙 **پشتیبانی از حالت تاریک**: تجربه کاربری بهینه در هر زمانی از شبانه‌روز
-- 📱 **طراحی ریسپانسیو**: بهینه‌سازی شده برای تمامی دستگاه‌ها
-- 🎯 **پیگیری پیشرفت**: امکان علامت‌گذاری و پیگیری وضعیت یادگیری
-- 🔗 **منابع کیفی**: لینک به بهترین منابع آموزشی هر حوزه
-- ⚡ **عملکرد بالا**: ساخته شده با Next.js 14 و بهینه‌سازی‌های مدرن
-
-## 🚀 شروع سریع | Quick Start
-
-### نیازمندی‌ها | Requirements
-
-- Node.js 18+ 
-- npm or yarn
-
-### نصب | Installation
+First, run the development server:
 
 ```bash
-# کلون کردن پروژه
-git clone https://github.com/your-username/faroadmap.git
-cd faroadmap
-
-# نصب وابستگی‌ها
-npm install
-
-# اجرای سرور توسعه
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-پروژه روی آدرس `http://localhost:3000` در دسترس خواهد بود.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### ساخت برای پروداکشن | Production Build
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```bash
-# ساخت برای پروداکشن
-npm run build
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-# شروع سرور پروداکشن
-npm start
-```
+## Learn More
 
-## 🛠️ تکنولوژی‌های استفاده شده | Tech Stack
+To learn more about Next.js, take a look at the following resources:
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui + Radix UI
-- **Icons**: Lucide React
-- **Font**: Vazirmatn (Persian font)
-- **Theme**: next-themes (Dark mode support)
-- **Deployment**: Vercel
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 📁 ساختار پروژه | Project Structure
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-```
-faroadmap/
-├── src/
-│   ├── app/                    # App Router pages
-│   │   ├── (main)/            # Main layout group
-│   │   ├── roadmap/           # Dynamic roadmap pages
-│   │   ├── about/             # About page
-│   │   ├── faq/               # FAQ page
-│   │   ├── contact/           # Contact page
-│   │   └── not-found.tsx      # 404 page
-│   ├── components/            # Reusable components
-│   │   ├── ui/                # shadcn/ui components
-│   │   ├── header.tsx         # Header component
-│   │   ├── footer.tsx         # Footer component
-│   │   └── roadmap-tree.tsx   # Interactive roadmap tree
-│   ├── data/                  # Static data
-│   │   └── roadmaps.ts        # Roadmap data
-│   ├── types/                 # TypeScript types
-│   │   └── roadmap.ts         # Roadmap type definitions
-│   └── lib/                   # Utility functions
-│       └── utils.ts           # Helper functions
-├── public/                    # Static assets
-└── docs/                      # Documentation
-```
+## Deploy on Vercel
 
-## 🎨 طراحی و UI/UX | Design & UI/UX
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- **فونت**: Vazirmatn برای پشتیبانی کامل از زبان فارسی
-- **جهت‌یابی**: راست به چپ (RTL) برای تجربه بهینه فارسی
-- **رنگ‌بندی**: سیستم رنگ‌بندی انطباقی با حالت روشن و تاریک
-- **ریسپانسیو**: طراحی Mobile-first با بریک‌پوینت‌های مدرن
-
-## 🗺️ نقشه‌راه‌های موجود | Available Roadmaps
-
-1. **توسعه فرانت‌اند** - Frontend Development
-2. **توسعه بک‌اند** - Backend Development  
-3. **توسعه فول‌استک** - Full Stack Development
-4. **DevOps** - DevOps Engineering
-5. **توسعه موبایل** - Mobile Development
-6. **هوش مصنوعی** - AI/ML Development
-
-## 🤝 مشارکت | Contributing
-
-ما از هر نوع مشارکتی استقبال می‌کنیم! از گزارش باگ تا اضافه کردن ویژگی‌های جدید.
-
-### نحوه مشارکت:
-
-1. Fork کردن پروژه
-2. ایجاد branch جدید (`git checkout -b feature/amazing-feature`)
-3. Commit کردن تغییرات (`git commit -m 'Add some amazing feature'`)
-4. Push کردن به branch (`git push origin feature/amazing-feature`)
-5. باز کردن Pull Request
-
-## 📄 لایسنس | License
-
-این پروژه تحت لایسنس MIT منتشر شده است. برای اطلاعات بیشتر فایل [LICENSE](LICENSE) را مطالعه کنید.
-
-## 🙏 تشکر | Acknowledgments
-
-- [roadmap.sh](https://roadmap.sh) برای الهام
-- جامعه توسعه‌دهندگان ایران
-- تمامی مشارکت‌کنندگان در پروژه
-
-## 📞 تماس | Contact
-
-- **وب‌سایت**: [faroadmap.ir](https://faroadmap.ir)
-- **ایمیل**: contact@faroadmap.ir
-- **تلگرام**: [@faroadmap](https://t.me/faroadmap)
-- **گیت‌هاب**: [github.com/faroadmap](https://github.com/faroadmap)
-
----
-
-**ساخته شده با ❤️ برای جامعه توسعه‌دهندگان ایران**
-
-*Made with ❤️ for Iranian Developer Community*
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

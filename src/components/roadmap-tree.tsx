@@ -4,7 +4,6 @@ import { useState } from "react";
 import { ChevronDown, ChevronLeft, Clock, ExternalLink, CheckCircle, Circle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { RoadmapItem, Resource } from "@/types/roadmap";
 import { cn } from "@/lib/utils";
 
@@ -21,17 +20,6 @@ function getStatusIcon(status: RoadmapItem['status']) {
       return <AlertCircle className="h-5 w-5 text-yellow-500" />;
     default:
       return <Circle className="h-5 w-5 text-gray-400" />;
-  }
-}
-
-function getStatusText(status: RoadmapItem['status']) {
-  switch (status) {
-    case "completed":
-      return "تکمیل شده";
-    case "in-progress":
-      return "در حال انجام";
-    default:
-      return "شروع نشده";
   }
 }
 
