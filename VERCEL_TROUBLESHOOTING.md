@@ -95,19 +95,7 @@ html {
 ```
 
 #### مشکل D: خطای SSL یا HTTPS
-اگر پس از اتصال دامنه در هنگام دسترسی به سایت با HTTPS با خطا مواجه می‌شوید، مراحل زیر را دنبال کنید:
 
-- در **Vercel Dashboard** به تب **Domains** بروید و از وضعیت **Valid** بودن دامنه مطمئن شوید.
-- با ابزارهایی مثل `dig` یا `nslookup` رکوردهای DNS (A/CNAME) را چک کنید تا به آدرس‌های Vercel اشاره داشته باشند.
-- دستور `openssl s_client -connect yourdomain.com:443` را اجرا کنید تا زنجیره گواهی و تطابق نام دامنه بررسی شود.
-- در صورت مشاهده پیام‌های **untrusted** یا **certificate mismatch** کمی صبر کنید تا DNS به‌روز شود یا دامنه را دوباره در Vercel اضافه کنید.
-- پاک کردن کش مرورگر یا استفاده از مرورگر دیگر نیز می‌تواند مفید باشد.
-
-#### مشکل E: خطای "ENOENT: no such file or directory, open package.json"
-اگر در لاگ‌های Build با این خطا روبه‌رو شدید، احتمالاً ریشه پروژه به درستی تنظیم نشده است. در فایل `vercel.json` مقدار `rootDirectory` را برابر با `faroadmap` قرار دهید یا در Vercel Dashboard بخش **Build & Output Settings** مسیر را مشخص کنید.
-
-
-برای آشنایی با بهترین شیوه‌های امنیت و مدیریت SSL، بخش DevOps در [roadmap.sh](https://roadmap.sh/devops) را مطالعه کنید.
 
 ---
 
@@ -209,4 +197,3 @@ Settings → Framework Preset → Next.js
 - GitHub: [Issues](https://github.com/faroadmap/faroadmap/issues)
 
 ---
-**تاریخ آپدیت:** 2025-08-03
